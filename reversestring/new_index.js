@@ -37,13 +37,31 @@
 
 // Method #2:
 
+// function reverse(str) {
+//   return str.split('').reduce((rev, char) => char + rev, '');
+// }
+
+// module.exports = reverse;
+
+// var input = "hello"
+// console.log(input)
+// var ans = reverse(input)
+// console.log(ans)
+
+// Method #3:
+
 function reverse(str) {
-  return str.split('').reduce((rev, char) => char + rev, '');
+  let reversed = '';
+
+  for (let character of str) {
+    reversed = character + reversed;
+  }
+
+  return reversed;
 }
 
-module.exports = reverse;
+let new_var = "hello world"
 
-var input = "hello"
-console.log(input)
-var ans = reverse(input)
-console.log(ans)
+console.log(reverse(new_var))
+
+module.exports = reverse;
