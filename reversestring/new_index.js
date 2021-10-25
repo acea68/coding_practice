@@ -26,8 +26,6 @@
 //     return joined_str
 // }
 
-// module.exports = reverse;
-
 // var input = "hello"
 // console.log(input)
 // var ans = reverse(input)
@@ -41,10 +39,7 @@
 //   return str.split('').reduce((rev, char) => char + rev, '');
 // }
 
-// module.exports = reverse;
-
 // var input = "hello"
-// console.log(input)
 // var ans = reverse(input)
 // console.log(ans)
 
@@ -55,13 +50,13 @@ function reverse(str) {
 
   for (let character of str) {
     reversed = character + reversed;
+    // console.log(reversed)
   }
 
   return reversed;
 }
 
-let new_var = "hello world"
-
+let new_var = "hello"
 console.log(reverse(new_var))
 
 module.exports = reverse;
