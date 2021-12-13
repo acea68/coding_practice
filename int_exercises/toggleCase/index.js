@@ -14,4 +14,6 @@ function toggleCase(str){
 }
 console.log(toggleCase('MaRio')); //'mArIO'
 console.log(toggleCase('PRP')); //'prp'
+console.log(toggleCase('prp')); //'PRP'
 console.log(toggleCase('Good news, everyone!')); //'gOOD NEWS, EVERYONE!'
+console.log(toggleCase('m@R1o')); //'M@r1O'
