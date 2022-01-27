@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -13,89 +13,86 @@
 </head>
 
 <body id="#top">
-  <header>
-    <h1 id='ace' href="index.html">Styles Conference</h1>
+
+  <!-- Header -->
+
+  <header class='container group'>
+    <h1 class="logo">
+      <a href="index.html">Styles <br> Conference</a>
+    </h1>
     <h3>August 24&ndash;26th &mdash; Chicago, IL</h3>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="venue.html">Venue</a>
+      <a href="register.html">Register</a>
+    </nav>
   </header>
-  <!-- <h1>Hello World!&#9786;</h1> -->
-  <!-- <img
-    src="data:image/jpeg;base64,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"
-    alt="A picture of a happy face icon"> -->
-  <!-- <img
-    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhISEBMQFRUXGBIXFRIVFRYVFRIQFhcWFhUWFhcYHCgiGBolGxUXIjEhJikrLi4uFx8zODctNygxMzcBCgoKDg0OGxAQGy0lICUtLS0tLS0tNSsrLS0rLS0tLS0tLS0tLi0tLS0rLS0tLSstLS0tKysrKystLS0tLSsrLf/AABEIAKAAoAMBEQACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABQIDBAYHAQj/xABDEAACAQMABwQHBQQIBwAAAAABAgADBBEFBhIhMUFRImGBkQcTUnFyodEjMkKxwWKy4vAUFTNzksLh8RckRFNjgqL/xAAbAQEAAgMBAQAAAAAAAAAAAAAAAQIDBAUGB//EADMRAQACAgAFAQQJAwUAAAAAAAABAgMRBAUSITFREyJBoRQycYGRsdHh8FJhwQYWI0NT/9oADAMBAAIRAxEAPwDuMBAQEBAQEC3cV1RWd2VVUEszHAVRvJJ5CPCYibTqHO9K+l23RittQqVwN22W9Up717LEj3gTXtxFY8Ovh5PltG7zr5sa09MSFgK9pURfaSqKhH/qVX85EcTHxhe/JLxHu2392v1dD0PpajdUhWt3V0PMcVPNWB3qe4zYraLRuHIy4r4rdN41LOksZAQEBAQEBAQEBAQEBAQEDlvpm0qxa3sUJAcetqj2lDbNMe7KsfeBNXiL6913OTcPFpnLPw7R/lqdLR6U04CakvRUiZnSLr2wOTiU22px9knqTrE2jq7sVd6Tqwamp41AM02GeBzuz0Y8Znw5eiXI5jy/29Y15j+Sn7n0naRX7T+jWy08/dIqFsfFtgf/ADMv0i3o0Y5Ni1rqnbdtS9eKF+CoBpVlGWosc5X2kb8Q8ARNjHli7k8XwN+Hnc949W1TI0iAgICAgICAgICAgIGh67+kZLRzb26LVrj72SRTpE8A2N7N3DHvmDJmivaHU4Llts8dVp1HzlzPSOlq15XFxcBA4VVwgIXZBJG4k+0ZpZMk2ncvT8HwVcFOmrKua+QBMUztvY8fT3Y8hlW2A47oRNYl7eXJqABmGByluqZYow1jwt6r1GpaQs3Q4+2pKT/43YI+e7ZYzNhn3oc3mOOJwX36S+jAek6TxL2AgICAgICAgICAgIHzO9tVqXVdSrNVNWrtgAk7e2dr59ZzLxM2e3wZMePFFpnUahICgUJVuIJBHHBG48JhntOnTxWi9YtXxLyrUCjJkMizbU69c4oIxHM8FHvY7patJt4avEcZhwR/yW1+f4Ji21GuX3vUVfcC30maOHmXIyf6gxx9Skz9vb9WV/w9b/vH/B/FL/Rv7tf/AHDb/wA/n+yO0lqPXUZR1qfskbBPuySPnInBMeGSnO8WSdXrMfNc1A0/cWN5Tt6m2KNV1R6TZwjOdlaiA8N5GccR4S2K9q21KvHcPi4jFOSmtx33H5O9TeeYICAgICAgICAgIGBpLSQp9kdp+Q5DvMiZ0lrtOyXaepsqGc7TkKBtN1OOMx6+K83taIiZ8ORpcZBZjv359/OcufL6NimOmNJXVXVxrx/WVMikDgAbvWEcQOi9TMuLF1eXJ5pzP6PHs8f1vy/d1rRugqdNQAoAHAAYAm/XHEPH3yWvbqtO5Z5tByEtpRj1bWBgXFpIShb7RiMyMyKxRldSR911III8RImIlemW9N9M6223RGmFrdk9moOK8j3r9JkidseknJQQEBAQEBAQEDB0rf8Aql3ffb7o/UyJnQg7aiWOWySd5J5mUWS1O23Yk6Q5Vpr0dXBu2NIqKDsWJzvp5OWGzz54mnfBM27PScLzmmPBq31o+f8APi6foDRC0UVVGAoAA7hNqlNQ8/ly2yWm9vMpnEysSkiQLbrIGJVpyEo+5oQIW6pFSGUkEHII4gyEtp0FpT1yb8B13MOvRh3GXidolJyUEBAQEBAQPGbAJPAflA1OrWNWoXPDgo6KOH898p5Sk7SnAkackXgBJQrkhApMgW3kCw8hLHqpAir2jCUVbXJoVlqDhwYdUPH6+EiJ0N+RgQCN4O8HqDMir2AgICAgIEZrFcbNEgcXIXw4n5DHjInwmENZLulUpKyuab59W6Njcdlg2D344Qhno0C8rSUKsyRVmSKSZAtMZAttISstAwrpYEBpCnIS2TVO626AU8UJTwG9fkceEtXwiU1LIICAgICBrutNTt0l6Bj54A/Iytkw43rvrYlS/SxqOVtae6tgkCrWK5AcjfsAkDHDOcyYhEorWDSttaGlX0dUpJcKwwaBXZan+IVAu5lO7ceMmR3jVXTK3lpQuVGBUQMV47Ljc657mBHhKJTKmBWGkoVZkjwmQOCaQ1uGlb6vSeowtaeRQoByi18HDVHwRtk8QvAA8OJlogYd7p3+qK9B7RiFYn19ntk03pbu0FJ7Dbzgj6xMDulpdpVp06tM5Soqup6owDKfIyiVFxAhL8SJSytSauHrJ1Ct5Eg/mJNUS22XQQEBAQEDVtZj9uvwL+80pbymHzjrNopmvrzazvr1iPhLkr8iJtY8XVG2nm4nonSOraGwOEvbBpirxm5fQvoftmp6KtlbmazAdFNVyPr4zUvGp036W6o23ZTKrKwYHuYQjtYnYWl0UztCjW2ccdrYbHzkj5Fo6OYzPXFMta/ERCqrowiTOGYRXiYl9K+jEt/VVnt5yEI3+yHYL8gJrzGpbUTuNthrmEoW/lZSamn/AJl/7tv30k18kt2l1SAgICAgatrUMVqZ6pjyJ+spZMNK1o1Sas/9JtwGcgCpT3AtsjAdc8TgAEdwm5w2ete1nN47hb5Pep5R2jNUDWwawKL7A+8feeU0OYc9x1no4eNz6/D7vX8vtX5fyXJPv8ROo9Pj9/p/PDouj7DZREGQqqqqvIKBgDHunB9plyz1XtLv6pSNVhltTxwJEi15p3iUR38lG9ZTh9468x9ZkwcztWdZe8evx/dF+Hi0br5SKvneJ3K2i0bjw0piYnUvHwQQd4PEdRLIcG0/qqbO4amwPqiSaT8mQ8Bn2hwI+s63DTW8PP8AG1vjt/Zj2mr7XNVaNAZJxlsdlF5sx5ATJn6aRth4T2mS2odxsLRaNKnRp/dpqqL7lAGT37pxpnc7elrGo0VzCULftKyld1JXNeq3RMebA/5ZNfJLdJdUgICAgIGv630crTf2WI8GH8PzlbJhAisW7K8OZ6904HMeO/6qT9s/4dLhuH1HXb7ktY2+Jz8FN95Xy3SGcTem0VhreVlzma15mWSqw4mreGWqqzr4OyeB4dxm/wAq4uaZPY28T4+392LicW69cfBn7U9I56isiupWoqup4qwDA+BkxMx4RNYtGpW6FGnTGzSp06Y6IoUeQEmbTPmUVpWvasaGMhZj3BkCC0i8iUpnUW3xTq1D+JgB7lH1Y+UtVEtnlkEBAQEBAhNbLtVo7B3s5AUdMEEt4frNDmHE+xxdvM+P1bXCYfaX7+Ia/o6lwnk/NnVyT2TSNiblb6js05jasGXidqSNFiFipNa7NVi1TiasWmtotHwZojcalIW1bIBnusduqsW9XFtGp0ulpdCkmBQXEDEuqokCAvnzmVlZvmhrb1dCknRRn4jvb5kzJHhSWbJCAgICAgc50tpL19w7A9leynwjn4nJ8Z5XmGf2uWZjxHaHf4fD7PHEfHzLPs3nL8SXhI0zM9Ja9oXlM2IlimHjuBvMWkiEbd6WopxdSei9o/Ka15bNMVp+CJuNJVKn9kmyvtv+g/3mLp7titIr5TOhXOwMnO7j1ntcEdOOIn0hwcs7tMwkszMxvMwLdRMyBHXaYkSlGpS2qiL7TKvmQP1lfil0aZlCAgICAgeEZ3GBo+ndTmUmpa5I4mlntL8JPEd3H3zg8VyrXvYvw/R1+H4+J93J+LXaRYHBqVFI3EHOQemDwnGtims6l0O0xuEhRRz/ANRUH8++RFZYrTH9LIFox43NbwOP1l+mfVj6o/ph4dGUeLtUf4m+kTVMZLfCIh4fU0/uIo7+J8zvlJqtHVPmUfc3pY7K8T8hN7geEm94tPiGHicsY69MeZbNotMKBPS1caWfmW2hSWkbNPMxAwL+JSj9HN9vR/vE/eErHlMuhTMoQEBAQEBAsXt2tJC7nAHmTyA74mRolzbirlnG8knPPJ38ZqZcGPJ9aGfHnvj+rKE0mWoI1TOVUZ3/ACHnOdk5dWO9ZdLh+KtlvFJjvKHpa4L7NTyH1mrPB29YdX6HL2praOS1PkP1j6Hb1hMcFZHNrM7uowFUkAnOTv3eEz4+DpE+93Rm4aa4rTWe+m46FsxubnOpSsR4eXvaZnu2y3XAmeGNdMlC3UfEjSVipfARsRlzdF5G0sOqzIVdeKkMPeDkQOiaOvkrIKlM5B4jmrcwe+ZInajJkhAQEBAQNQ1jrl7n1fJAN37TAMT5EeUpbymF9KACwOdekS8xTSiPxuSfhTl5svlNbNPZ2eT4+rLNvSPzQ2htHBhkiavl6iZiq/fWSryErPZmxzFoQGkaeN4k1liy1h1HVSrt0kbqqnzAM3sfh4PNXpvNfSWyeuA4zKxKHuxyjY9oHPGBZubMRoYy2wBkaGRWtBsy2hjao3Bp3RpfhcNu/aUFgfIHzkV8kt7mRUgICAgIGj60qaV16w8HCkHvUBSPkPOUt5WhSdLriRs05zr/AFA1eiRw2W8yRmaud6Hkni32srQdYbAmvEu9krt5pSsDK2llw101rSbbjJqjNPZ0XUlsUaQ6Kg+Qm9j8PCcTO8tp/vP5tyq24KzNprIwqAd5kJZ9k4kwh5pKsAIkQZvxmVSv1tLLsydj3U+gal16zkgYk97AqB8z5RXyS36ZFSAgICAgYelNGpXTYqDvDDip6iRMbGpVtTawPYemR1OVPiMGV6ZW21j0j6n1KVslyG2zTYioFG5ab47XU4IH+KYM+P3dutyjiIpkmk/H/DRrK9wNxmlMPWVtEr1W875XTJN4iEa5NRgo4Z39wmWle7m8bxMYsc2/D7XRNXbnYAz3Tcq8bbu2q40uNjdMm1dMCxtq1xtmmM7IySdwJ5KO8xEbGPRv3pkhgQRxB3EH3SNj1q1Su4RASTwA/M9BHkbFcanA002HxUA7ROSrt+n+kt0o2wKOplYntvTA6jLHwGBHTKdtu0Xo1KCbFMd5Y8WPUy0RpVmSQgICAgICAgU1EDAqwBBBBBGQQdxBHMQmJ13hzzTPoktqjF7arUt8nJTZ9ZTHwgkEec17cPWfDrYecZaRq0b+UsG39Di5+1vXZeYSiEPmXb8pWOGj1Zbc7vMdqfP9obxozVOzoUDb06KlGxt7XaZ2HAsx35HLpyxM9aViNQ5WbiMma3VeUdW1Hp5+yqMg6EB8e45EdDF1K7bUtAc1KrOOgGx57zJ6UbbJbW6U1CU1CqOAH875ZC3daPpVP7SmjHqQM+fGRoV21pTpjFNEXrsgDPv6yRegICAgICB//9k"
-    alt="A picture of a cute & chubby chicken head icon"> -->
-  <section>
+
+  <!-- Hero -->
+
+  <section class="hero container">
     <h2>Dedicated to the Craft of Building Websites</h2>
-    <!-- <p class='whatever'><mark>This is a <b>web</b> page.</mark></p> -->
-    <p class='alan'>Every year, the brightest web designers and front-end developers <br> decend on Chicago to discuss
-      the latest
-      technologies. <br> Join us this August!</p>
+    <p class='alan'>Every year, the <mark>brightest</mark> web designers and front-end developers <br> decend on Chicago
+      to discuss
+      the latest technologies. Join us this August!</p>
+    <a href="register.html" class="btn btn-alt">Register Now</a>
   </section>
 
-  <section>
-    <section>
-      <h5>Speakers</h5>
-      <h3>World-Class Speakers</h3>
+  <!-- Teasers -->
+
+  <section class='grid'>
+
+    <!-- Speakers -->
+
+    <section class="col-1-3">
+      <a href="speakers.html">
+        <h5>Speakers</h5>
+        <h3>World-Class Speakers</h3>
+      </a>
       <p>Joining us from all over the world are over twenty fantastic speakers, here to share their stories.</p>
-    </section>
+    </section><!--
 
-    <section>
-      <h5>Schedule</h5>
-      <h3>Three Enlightening Days</h3>
+      Schedule
+      (note the removal of white space between colns by removing space
+      between ...</section><section>...)
+
+      --><section class="col-1-3">
+      <a href="schedule.html">
+        <h5>Schedule</h5>
+        <h3>Three Enlightening Days</h3>
+      </a>
       <p>Action-packed agenda full of interseting content and events catered specifically to you.</p>
-    </section>
+    </section><!--
 
-    <section>
-      <h5>Venue</h5>
-      <h3>The Chicago Expo</h3>
-      <p>Our welcoming and exciting venue brings the whole world together.</p>
+      Venue
+
+      --><section class="col-1-3">
+      <a href="venue.html">
+        <h5>Venue</h5>
+        <h3>The Museum of Science and Industry</h3>
+      </a>
+      <p class="banner">Our grand and exciting venue brings the whole world together.</p>
     </section>
   </section>
 
-  <!-- Division -->
-  <div class="social">
-    <p>Additionally, I have a profile on <a href="https://www.linkedin.com/in/alan-cea/" target="_blank"
-      rel="noopener noreferrer">LinkedIn.</a></p>
-  </div>
-  <!-- Span -->
-  <p>Soon we'll be <span class="tooltip">writing HTML</span> with the best of them.</p>
-  <p>Steve Jobs was a co-founder and longtime chief executive officer at Apple. On June 12, 2005, Steve gave the
-    commencement address at Stanford University.</p>
+  <!-- Footer -->
 
-  <p>In his address Steve urged graduates to follow their dreams and, despite any setbacks, to never give
-    up&ndash;advice which he sincerely took to heart.</p>
-  <h1>Heading Level 1</h1>
-  <h2>Heading Level 2</h2>
-  <h3>Heading Level 3</h3>
-  <h4>Heading Level 4</h4>
-  <h5>Heading Level 5</h5>
-  <h6>Heading Level 6</h6>
-  <!-- Strong importance -->
-  <p><strong>Caution:</strong> Falling rocks.</p>
-
-  <!-- Stylistically offset -->
-  <p>This recipe calls for <b>bacon</b> and <b>baconnaise</b>.</p>
-
-  <!-- Stressed emphasis -->
-  <p>I <em>love</em> Chicago!</p>
-
-  <!-- Alternative voice or tone -->
-  <p>The name <i>Shay</i> means a gift.</p>
-
-  <!-- Relative Path -->
-  <p><a href="about.html">About</a></p>
-  <!-- Absolute Path -->
-  <a href="http://www.google.com/">Google</a>
-
-
-  <footer>
-    <!-- <p>I may be found on <a href="https://www.linkedin.com/in/alan-cea/" target="_blank"
-        rel="noopener noreferrer">LinkedIn.</a></p> -->
-    <p><a href="mailto:alancea01@gmail.com?subject=Inquiry%20-%20&body=How%0Aare%20you." target="_blank"
-        rel="noopener noreferrer">Questions? Email me.</a></p>
-    <p><a href="#top" class='smoll'>Back to the top.</a></p>
+  <footer class='primary-footer container group'>
+    <p><a href="#top" class='tiny'>Back to the top.</a></p>
     <small>&copy; Styles Conference</small>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="venue.html">Venue</a>
+      <a href="register.html">Register</a>
+    </nav>
   </footer>
 </body>
 
 </html>
+
+    <!-- <p><a href="mailto:alancea01@gmail.com?subject=Inquiry%20-%20&body=How%0Aare%20you." target="_blank"
+        rel="noopener noreferrer" class="invis">Questions? Email me.</a></p> -->
