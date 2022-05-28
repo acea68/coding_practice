@@ -47,12 +47,12 @@
 // ---------------------------------
 // Method #4: use reduce helper
 
-// function reverse(str) {
-//   // return str.split('').reduce((reversed, char) => {
-//   //   return char + reversed
-//   // } , ''); // or cleaner version...
-//   return str.split('').reduce((reversed, char) => char + reversed , '');
-// }
+function reverse(str) {
+  // return str.split('').reduce((reversed, char) => {
+  //   return char + reversed
+  // } , ''); // or cleaner version...
+  return str.split('').reduce((reversed, char) => char + reversed , '');
+}
 
 // TESTING
 // let result = reverse('apple'); // 'elppa'
