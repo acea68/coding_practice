@@ -11,35 +11,35 @@
 // -------------------------------
 // Method #1: word.replace(/[^\w]/g, '').toLowerCase();
 
-// function anagrams(strA, strB) {
-//   let str1 = '';
-//   let str2 = '';
-//   let sanitize = str => str.replace(/[^\w]/g, '').toLowerCase();
-//   str1 = sanitize(strA);
-//   str2 = sanitize(strB);
+function anagrams(strA, strB) {
+  let str1 = '';
+  let str2 = '';
+  str1 = sanitize(strA);
+  str2 = sanitize(strB);
 
-//   let mapper = input => {
-//     let obj = {};
-//     input.split('').forEach(char => {
-//       obj[char] ? obj[char]++ : obj[char] = 1;
-//     })
-//     return obj;
-//   };
-//   let mapped1 = mapper(str1);
-//   let mapped2 = mapper(str2);
+  let mapped1 = mapper(str1);
+  let mapped2 = mapper(str2);
 
-//   let sorted = object => {
-//     let arr = [];
-//     for(let prop in object) {
-//       arr.push([prop, object[prop]]);
-//     }
-//     // console.log(arr);
-//     arr.sort()
-//     return JSON.stringify(arr);
-//   }
+  return sorted(mapped1) === sorted(mapped2) // ? true : false;
+};
 
-//   return sorted(mapped1) === sorted(mapped2) // ? true : false;
-// };
+let sanitize = str => str.replace(/[^\w]/g, '').toLowerCase();
+
+let mapper = input => {
+  let obj = {};
+  input.split('').forEach(char => {
+    obj[char] ? obj[char]++ : obj[char] = 1;
+  })
+  return obj;
+};
+
+let sorted = object => {
+  let arr = [];
+  for (let prop in object) {
+    arr.push([prop, object[prop]]);
+  }
+  return JSON.stringify(arr.sort());
+};
 
 // -------------------------------
 // Method #2
@@ -75,8 +75,8 @@ function anagrams(str1, str2) {
 
 function cleanStr(str) {
   return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
-}
+};
 
 // console.log(anagrams('rail safety', 'fairy tales')); // True
-console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True
-// console.log(anagrams('Hi there', 'Bye there')); // False
+// console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True
+console.log(anagrams('Hi there', 'Bye there')); // False
