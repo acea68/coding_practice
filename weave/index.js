@@ -57,18 +57,18 @@ function weave(sourceOne, sourceTwo) {
 }
 
 // You should not need to make any changes to this class
-class Queue {
+class Queue { // FIFO
   constructor() {
     this.data = [];
   }
   add(record) {
-    this.data.unshift(record);
+    this.data.unshift(record); // add to beginning
   }
   remove() {
-    return this.data.pop();
+    return this.data.pop(); // remove last
   }
   peek() {
-    return this.data[this.data.length - 1];
+    return this.data[this.data.length - 1]; // look at last
   }
 }
 
