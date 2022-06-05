@@ -78,16 +78,20 @@ class LinkedList {
   }
   insertLast(data) {
     // this.insertAt(data, this.size() - 1);
-    // if (!this.head) {
-    //   this.head = new Node(data);
-    // }
+    if (!this.head) {
+      this.head = new Node(data);
+    }
     // this.getLast().next = new Node(data); // OR ...
 
     let currNode = this.head;
-    while (currNode.next) {
-      currNode = currNode.next;
+    while (currNode) {
+      if (currNode.next) {
+        currNode = currNode.next;
+      } else {
+        currNode.next = new Node(data);
+        break;
+      }
     }
-    currNode.next = new Node(data);
   }
   getAt(index) {
     let counter = 0;
@@ -161,9 +165,25 @@ class LinkedList {
     // }
     // this.insertLast(data);
   }
+  forEach(fn) {
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+      fn(node, counter);
+      node = node.next;
+      counter++;
+    }
+  }
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
 }
 
-// let list = new LinkedList();
+let list = new LinkedList();
 // list.insertFirst('a');
 // list.insertFirst('b');
 // list.insertFirst('c');
@@ -189,14 +209,15 @@ class LinkedList {
 // console.log('na: ', list.getAt(1)); // returns node with data 'a'
 // list.insertAt('Hi', 1)
 // console.log('Hi: ', list.getAt(1)); // returns node with data 'Hi'
-const list = new List();
-
 list.insertLast(1);
 list.insertLast(2);
 list.insertLast(3);
 list.insertLast(4);
-
-list.forEach((node, index) => {
-node.data += 10;
-});
-console.log(list.getAt(0)); // Returns node with data '11'
+// list.forEach((node, index) => {
+//   node.data += 10;
+// });
+// console.log(list.getAt(0)); // Returns node with data '11'
+for (let node of list) {
+  node.data += 10;
+}
+console.log(list.getAt(1)); // returns node with data 11
