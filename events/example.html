@@ -1,0 +1,22 @@
+<head>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Click the button</h1>
+  <button>Me!</button>
+  <script> // Write code here ...
+  // Set up event handler on the button
+  // "selector" (the $(...) part) gets reference to button
+  // the ".on('click', ..." sets up an on-click event handler, then pass in cb
+    $('button').on('click', () => {
+      console.log('Hello');
+    });
+    $('button').on('click',  () => {
+      console.log('There!');
+    });
+    // can manually/automatically trigger (all) events using ".trigger" method
+    $('button').trigger('click');
+    // can deregister all trigger events by passing in event name to disable (disable all callbacks associated with a single event name)
+    $('button').off('click');
+  </script>
+</body>
