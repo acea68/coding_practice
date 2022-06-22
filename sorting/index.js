@@ -57,9 +57,8 @@ function merge(left, right) {
   }
   return [...merged, ...left, ...right];
 }
-
 // TESTING
-let result = mergeSort([10, 0, -30, 90, 0, 5]);
-console.log(result);
+// let result = mergeSort([10, 0, -30, 90, 0, 5]);
+// console.log(result);
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
