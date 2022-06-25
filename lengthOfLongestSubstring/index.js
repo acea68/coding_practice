@@ -28,7 +28,7 @@
 // c: include spaces, symbols, numbers as possible chars
 // e: include string length of 0 and large strings
 // -------------------
-// Soln #2:
+// Attempt #2:
 function lengthOfLongestSubstring(s) {
   let map = new Array(128).fill(0);
   let right = 0, left = 0, result = 0, r, l;
