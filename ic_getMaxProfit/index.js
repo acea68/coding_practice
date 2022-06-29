@@ -66,43 +66,43 @@ function getMaxProfit(stockPrices) {
 // }
 // Tests
 
-// var desc = 'price goes up then down';
-// var actual = getMaxProfit([1, 5, 3, 2]);
-// var expected = 4;
-// assertEqual(actual, expected, desc);
+var desc = 'price goes up then down';
+var actual = getMaxProfit([1, 5, 3, 2]);
+var expected = 4;
+assertEqual(actual, expected, desc);
 
 var desc = 'price goes down then up';
 var actual = getMaxProfit([7, 2, 8, 9]);
 var expected = 7;
 assertEqual(actual, expected, desc);
 
-// var desc = 'big increase then small increase';
-// var actual = getMaxProfit([2, 10, 1, 4]);
-// var expected = 8;
-// assertEqual(actual, expected, desc);
+var desc = 'big increase then small increase';
+var actual = getMaxProfit([2, 10, 1, 4]);
+var expected = 8;
+assertEqual(actual, expected, desc);
 
-// var desc = 'price goes up all day';
-// var actual = getMaxProfit([1, 6, 7, 9]);
-// var expected = 8;
-// assertEqual(actual, expected, desc);
+var desc = 'price goes up all day';
+var actual = getMaxProfit([1, 6, 7, 9]);
+var expected = 8;
+assertEqual(actual, expected, desc);
 
-// var desc = 'price goes down all day';
-// var actual = getMaxProfit([9, 7, 4, 1]);
-// var expected = -2;
-// assertEqual(actual, expected, desc);
+var desc = 'price goes down all day';
+var actual = getMaxProfit([9, 7, 4, 1]);
+var expected = -2;
+assertEqual(actual, expected, desc);
 
-// var desc = 'price stays the same all day';
-// var actual = getMaxProfit([1, 1, 1, 1]);
-// var expected = 0;
-// assertEqual(actual, expected, desc);
+var desc = 'price stays the same all day';
+var actual = getMaxProfit([1, 1, 1, 1]);
+var expected = 0;
+assertEqual(actual, expected, desc);
 
-// var desc = 'error with empty prices';
-// const emptyArray = () => (getMaxProfit([]));
-// assertThrowsError(emptyArray, desc);
+var desc = 'error with empty prices';
+const emptyArray = () => (getMaxProfit([]));
+assertThrowsError(emptyArray, desc);
 
-// var desc = 'error with one price';
-// const onePrice = () => (getMaxProfit([1]));
-// assertThrowsError(onePrice, desc);
+var desc = 'error with one price';
+const onePrice = () => (getMaxProfit([1]));
+assertThrowsError(onePrice, desc);
 
 function assertEqual(a, b, desc) {
   if (a === b) {
