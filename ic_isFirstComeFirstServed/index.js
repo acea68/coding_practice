@@ -21,10 +21,11 @@ Note: Order numbers are arbitrary. They do not have to be in increasing order. *
 
 function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
   // Check if we're serving orders first-come, first-served
+  // preps in case you want to add more than two registers (like a drive thru)
   var registers = Array.prototype.slice.call(arguments);
-  registers.pop();
+  registers.pop(); // last array is always servedOrders. Remove to iterate thru registers only.
   let orders = 0;
-  for (let register of registers) {
+  for (let register of registers) { // only interates twice for 2 registers
     let oldInd = null, newInd = null;
     for (let order of register) {
       orders++;
@@ -37,10 +38,51 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
       if (newInd < oldInd || newInd === -1) return false;
     }
   }
-  if (orders !== servedOrders.length) return false;
+  if (orders !== servedOrders.length) return false; // takeOut + dineIn != served?
   return true;
 }
 
+// function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
+//   var takeOutOrdersIndex = 0;
+//   var dineInOrdersIndex = 0;
+//   var takeOutOrdersMaxIndex = takeOutOrders.length - 1;
+//   var dineInOrdersMaxIndex = dineInOrders.length - 1;
+
+//   for (var i = 0; i < servedOrders.length; i++) {
+//       var order = servedOrders[i];
+
+//       // if we still have orders in takeOutOrders
+//       // and the current order in takeOutOrders is the same
+//       // as the current order in servedOrders
+//       if (takeOutOrdersIndex <= takeOutOrdersMaxIndex &&
+//               order === takeOutOrders[takeOutOrdersIndex]) {
+//           takeOutOrdersIndex++;
+
+//       // if we still have orders in dineInOrders
+//       // and the current order in dineInOrders is the same
+//       // as the current order in servedOrders
+//       } else if (dineInOrdersIndex <= dineInOrdersMaxIndex &&
+//               order === dineInOrders[dineInOrdersIndex]) {
+//           dineInOrdersIndex++;
+
+//       // if the current order in servedOrders doesn't match the current
+//       // order in takeOutOrders or dineInOrders, then we're not serving first-come,
+//       // first-served
+//       } else {
+//           return false;
+//       }
+//   }
+
+//   // check for any extra orders at the end of takeOutOrders or dineInOrders
+//   if (dineInOrdersIndex != dineInOrders.length ||
+//          takeOutOrdersIndex != takeOutOrders.length) {
+//       return false;
+//   }
+
+//   // all orders in servedOrders have been "accounted for"
+//   // so we're serving first-come, first-served!
+//   return true;
+// }
 
 // Tests
 let desc, actual;
