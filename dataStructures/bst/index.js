@@ -4,7 +4,7 @@
 // should initialize values 'data', 'left',
 // and 'right'.
 // 2) Implement the 'insert' method for the
-// Node class.  Insert should accept an argument
+// Node class. Insert should accept an argument
 // 'data', then create an insert a new node
 // at the appropriate location in the tree.
 // 3) Implement the 'contains' method for the Node
@@ -17,8 +17,8 @@ class Node {
     this.left = null;
     this.right = null;
   }
-  insert(data) {
-    if (data < this.data && this.left) { // Solution
+  insert(data) { // Solution
+    if (data < this.data && this.left) {
       this.left.insert(data);
     } else if (data < this.data) {
       this.left = new Node(data);

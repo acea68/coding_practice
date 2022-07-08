@@ -18,44 +18,78 @@ Do not assume the meetings are in order.The meeting times are coming from multip
 
 Write a solution that's efficient even when we can't put a nice upper bound on the numbers representing our time ranges. Here we've simplified our times down to the number of 30-minute slots past 9:00 am. But we want the function to work even for very large numbers, like Unix timestamps. In any case, the spirit of the challenge is to merge meetings where start_time and end_time don't have an upper bound.
 */
+// function mergeRanges(meetings) {
+//   let start = 0, end = 0;
+//   let result = [];
+//   let isBusy = [];
+//   for (let range of meetings) {
+//     let busy = [range.startTime, range.endTime];
+//     for (let i = busy[0]; i < busy[1]; i++) { // O(n2) worst case: last range in meetings is from beginning of day to EOD
+//       isBusy[i] = true;
+//     }
+//   }
+//   for (let i = 0; i < isBusy.length; i++) {
+//     if (isBusy[i] === undefined) {
+//       isBusy[i] = false;
+//     }
+//   }
+//   let busyChunk = {};
+//   for (let j = 0; j <= isBusy.length; j++) {
+//     if (isBusy[j] && start === 0) {
+//       start = j;
+//       end = j;
+//       busyChunk.startTime = start;
+//     } else if (isBusy[j] && start !== 0) {
+//       end = j;
+//     } else if (!isBusy[j] && isBusy[j - 1]) {
+//       busyChunk.endTime = end + 1;
+//       result.push(busyChunk);
+//       busyChunk = {};
+//       start = 0;
+//       end = j;
+//     }
+//   }
+//   return result;
+// };
 function mergeRanges(meetings) {
-  let start = 0, end = 0;
-  let result = [];
-  let isBusy = new Array(30).fill(false); // assume there's 30 30-min blocks from 9am-12midnight
-  for (let range of meetings) {
-    let busy = [range.startTime, range.endTime];
-    for (let i = busy[0]; i < busy[1]; i++) {
-      isBusy[i] = true;
+
+  // Create a deep copy of the meetings array
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Deep_Clone
+  const meetingsCopy = JSON.parse(JSON.stringify(meetings));
+
+  // Sort by start time
+  const sortedMeetings = meetingsCopy.sort((a, b) => {
+    return a.startTime - b.startTime;
+  });
+
+  // Initialize mergedMeetings with the earliest meeting
+  const mergedMeetings = [sortedMeetings[0]];
+
+  for (let i = 1; i < sortedMeetings.length; i++) {
+    const currentMeeting = sortedMeetings[i];
+    const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
+
+    // If the current meeting overlaps with the last merged meeting, use the
+    // later end time of the two
+    if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
+      lastMergedMeeting.endTime = Math.max(lastMergedMeeting.endTime, currentMeeting.endTime);
+    } else {
+
+      // Add the current meeting since it doesn't overlap
+      mergedMeetings.push(currentMeeting);
     }
   }
-  // console.log('🚀 ~ mergeRanges ~ isBusy', isBusy);
-  let busyChunk = {};
-  for (let j = 0; j < isBusy.length; j++) {
-    if (isBusy[j] && start === 0) {
-      start = j;
-      end = j;
-      busyChunk.startTime = start;
-    } else if (isBusy[j] && start !== 0) {
-      end = j;
-    } else if (!isBusy[j] && isBusy[j - 1]) {
-      busyChunk.endTime = end + 1;
-      result.push(busyChunk);
-      busyChunk = {};
-      start = 0;
-      end = j;
-    }
-  }
-  return result;
-};
+
+  return mergedMeetings;
+}
+
+// Tests
 
 // let result = mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }]);
 // console.log('🚀 ~ result', result);
 // let actual = mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 5, endTime: 8 }]);
 // console.log('🚀 ~ actual', actual);
 
-
-
-// Tests
 let desc = 'meetings overlap';
 let actual = mergeRanges([{ startTime: 1, endTime: 3 }, { startTime: 2, endTime: 4 }]);
 let expected = [{ startTime: 1, endTime: 4 }];
@@ -125,10 +159,10 @@ assertArrayEquals(actual, expected, desc);
 function assertArrayEquals(a, b, desc) {
   // Sort the keys in each meeting to avoid
   // failing based on differences in key order.
-  orderedA = a.map(function (meeting) {
+  let orderedA = a.map(function (meeting) {
     return JSON.stringify(meeting, Object.keys(meeting).sort());
   });
-  orderedB = b.map(function (meeting) {
+  let orderedB = b.map(function (meeting) {
     return JSON.stringify(meeting, Object.keys(meeting).sort());
   });
   const arrayA = JSON.stringify(orderedA);
