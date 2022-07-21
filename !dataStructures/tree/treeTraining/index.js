@@ -88,7 +88,7 @@ class Node {
   }
 
   printDFS_iIn() { // iteratively: IN-order
-    console.log('🚀 printDFS_iIn: ', printDFS_iIn);
+    console.log('🚀 printDFS_iIn: ');
     let stack = [];
     let curr = this;
     while (true) {
@@ -150,13 +150,16 @@ root.insert_i(17);
 root.insert_i(7);
 root.insert_r(16);
 
-// root.printBFS_i();
-// // root.printBFS_r(); /* not advised */
-// root.printDFS_iPre();
-// root.printDFS_rPre();
-// root.printDFS_iIn();
-// root.printDFS_rIn();
-// root.printDFS_iPost();
+root.printBFS_i();
+// root.printBFS_r(); /* not advised */
+root.printDFS_iPre();
+console.log('🚀 printDFS_rPre: ');
+root.printDFS_rPre();
+root.printDFS_iIn();
+console.log('🚀 printDFS_rIn: ');
+root.printDFS_rIn();
+root.printDFS_iPost();
+console.log('🚀 printDFS_rPost: ');
 root.printDFS_rPost();
 
 
