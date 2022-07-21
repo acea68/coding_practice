@@ -9,7 +9,8 @@ We're going to run this function on our new, super-hip MacBook Pro With Retina D
 function findRepeat(numbers) {
   // Find a number that appears more than once
   for (let i = numbers.length - 1; i >= 0; i--) {
-    if (numbers.indexOf(numbers[i]) !== i) return numbers[numbers.indexOf(numbers[i])];
+    let numToFind = numbers.indexOf(numbers[i]);
+    if (numToFind !== i) return numbers[numToFind];
   }
   throw new Error('No duplicates found.')
 }
@@ -17,8 +18,7 @@ function findRepeat(numbers) {
 //   let floor = 1;
 //   let ceiling = numbers.length - 1;
 //   while (floor < ceiling) {
-//     // Divide our range 1..n into an upper range and lower range
-//     // (such that they don't overlap)
+//     // Divide our range 1..n into an upper range and lower range (such that they don't overlap)
 //     // lower range is floor..midpoint
 //     // upper range is midpoint+1..ceiling
 //     const midpoint = Math.floor(floor + ((ceiling - floor) / 2));

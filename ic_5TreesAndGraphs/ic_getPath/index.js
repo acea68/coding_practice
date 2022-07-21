@@ -22,7 +22,7 @@ For the network above, a message from Jayden to Adam should have this route:
 */
 
 // A simple, somewhat inefficient queue implementation
-class Queue { /// BFS uses QUEUE/FIFO (DFS uses STACK/LIFO)
+class Queue { // BFS uses QUEUE/FIFO (DFS uses STACK/LIFO: push/pop)
   constructor() {
     this.queue = [];
     this.size = 0;
@@ -36,7 +36,7 @@ class Queue { /// BFS uses QUEUE/FIFO (DFS uses STACK/LIFO)
   dequeue() {
     this.size -= 1;
     return this.queue.pop(); // removes from last
-  }
+  } // can also use '.push()' to add to end and '.shift()' to remove from beginning.
 }
 
 // function getPath(graph, startNode, endNode) {
@@ -64,7 +64,8 @@ function reconstructPath(howWeReachedNodes, startNode, endNode) {
   return reversedShortestPath.reverse(); // No longer reversed
 }
 
-function bfsGetPath(graph, startNode, endNode) {
+// function bfsGetPath(graph, startNode, endNode) {
+function getPath(graph, startNode, endNode) {
 
   if (!graph.hasOwnProperty(startNode)) {
     throw new Error('Start node not in graph!');
