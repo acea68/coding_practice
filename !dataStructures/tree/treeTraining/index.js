@@ -1,9 +1,9 @@
 // create Node class
-// include insert & print node
+// include insert & print node methods
 // print tree using BFS
 // iteratively & recursively
 // implement DFS
-// iteratively & recursively
+// iteratively & recursively (in order, pre-order, post-order)
 
 
 class Node {
@@ -62,15 +62,17 @@ class Node {
     }
   }
 
-  printBFS_r() {/* not advised */ } // recursively
+  printBFS_r(/* not advised */) { // recursively
+    /* not advised */
+  }
 
-  // Create an empty stack nodeStack and push root node to stack.
-  // while nodeStack is not empty:
-  // Pop an item from the stack and print it.
-  // Push right child of a popped item to stack
-  // Push left child of a popped item to stack
-  // The right child is pushed before the left child to make sure that the left subtree is processed first.
-  printDFS_i() { // iteratively: pre-order
+  printDFS_iPre() { // iteratively: PRE-order
+    // Create an empty stack nodeStack and push root node to stack.
+    // while nodeStack is not empty:
+    // Pop an item from the stack and print it.
+    // Push right child of a popped item to stack
+    // Push left child of a popped item to stack
+    // The right child is pushed before the left child to make sure that the left subtree is processed first.
     let stack = [];
     let curr = this;
     stack.push(curr);
@@ -82,14 +84,57 @@ class Node {
     }
   }
 
-  printDFS_() { // recursively: pre-order
+  printDFS_rPre() { // recursively: PRE-order
+    // if current is not null (curr exists?)
+    // print curr
+    // recurse on left child
+    // recurse on right child
     if (this) {
       console.log(this.data);
       if (this.left) this.left.printDFS_();
       if (this.right) this.right.printDFS_();
     }
   }
+
+  printDFS_iIn() { // iteratively: IN-order
+    let stack = [];
+    let curr = this;
+    while (true) {
+      if (!!curr) {
+        stack.push(curr);
+        curr = curr.left;
+      } else if (stack.length) {
+        curr = stack.pop();
+        console.log(curr.data);
+        curr = curr.right;
+      } else {
+        break;
+      }
+    }
+  }
+
+  printDFS_rIn() { // recursively: IN-order
+    if (!!this) {
+      if (!!this.left) this.left.printDFS_();
+      console.log(this.data);
+      if (!!this.right) this.right.printDFS_();
+    }
+  }
+
+  printDFS_() { // iteratively: POST-order
+    let stack = [];
+    let curr = this;
+    stack.push(curr);
+    while (!!stack.length) {
+      curr = stack.pop();
+      if (!!curr.right) stack.push(curr.right);
+      if (!!curr.left) stack.push(curr.left);
+    }
+  }
+
 }
+
+
 
 let root = new Node(10);
 root.insert_(5);
