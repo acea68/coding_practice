@@ -1,10 +1,9 @@
 // create Node class
-// include insert & print node methods
+// include insert method (iteratively & recursively)
 // print tree using BFS
 // iteratively & recursively
-// implement DFS
+// print tree using DFS
 // iteratively & recursively (in order, pre-order, post-order)
-
 
 class Node {
   constructor(value) {
@@ -13,7 +12,7 @@ class Node {
     this.right = null;
   }
 
-  insert_(num) { // iteratively
+  insert_i(num) { // iteratively
     let parent = null;
     let current = this; // root
     while (current !== null) {
@@ -34,13 +33,13 @@ class Node {
   insert_r(num) { // recursively
     if (num <= this.data) {
       if (this.left) {
-        this.left.insert_(num);
+        this.left.insert_r(num);
       } else {
         this.left = new Node(num);
       }
     } else {
       if (this.right) {
-        this.right.insert_(num);
+        this.right.insert_r(num);
       } else {
         this.right = new Node(num);
       }
@@ -48,6 +47,7 @@ class Node {
   }
 
   printBFS_i() { // iteratively
+    console.log('🚀 printBFS_iteratively: ');
     let queue = [];
     queue.push(this);
     while (queue.length) {
@@ -62,17 +62,12 @@ class Node {
     }
   }
 
-  printBFS_r(/* not advised */) { // recursively
-    /* not advised */
-  }
+  // printBFS_r(/* not advised */) { // recursively
+  //   /* not advised */
+  // }
 
   printDFS_iPre() { // iteratively: PRE-order
-    // Create an empty stack nodeStack and push root node to stack.
-    // while nodeStack is not empty:
-    // Pop an item from the stack and print it.
-    // Push right child of a popped item to stack
-    // Push left child of a popped item to stack
-    // The right child is pushed before the left child to make sure that the left subtree is processed first.
+    console.log('🚀 printDFS_iPre: ');
     let stack = [];
     let curr = this;
     stack.push(curr);
@@ -85,18 +80,15 @@ class Node {
   }
 
   printDFS_rPre() { // recursively: PRE-order
-    // if current is not null (curr exists?)
-    // print curr
-    // recurse on left child
-    // recurse on right child
     if (this) {
       console.log(this.data);
-      if (this.left) this.left.printDFS_();
-      if (this.right) this.right.printDFS_();
+      if (this.left) this.left.printDFS_rPre();
+      if (this.right) this.right.printDFS_rPre();
     }
   }
 
   printDFS_iIn() { // iteratively: IN-order
+    console.log('🚀 printDFS_iIn: ', printDFS_iIn);
     let stack = [];
     let curr = this;
     while (true) {
@@ -115,35 +107,56 @@ class Node {
 
   printDFS_rIn() { // recursively: IN-order
     if (!!this) {
-      if (!!this.left) this.left.printDFS_();
+      if (!!this.left) this.left.printDFS_rIn();
       console.log(this.data);
-      if (!!this.right) this.right.printDFS_();
+      if (!!this.right) this.right.printDFS_rIn();
     }
   }
 
-  printDFS_() { // iteratively: POST-order
+  printDFS_iPost() { // iteratively: POST-order
+    console.log('🚀 printDFS_iPost: ');
     let stack = [];
+    let outStack = [];
     let curr = this;
     stack.push(curr);
     while (!!stack.length) {
       curr = stack.pop();
-      if (!!curr.right) stack.push(curr.right);
+      outStack.push(curr);
       if (!!curr.left) stack.push(curr.left);
+      if (!!curr.right) stack.push(curr.right);
+    }
+    while (!!outStack.length) {
+      console.log(outStack.pop().data);
+    }
+  }
+
+  printDFS_rPost() { // recursively: POST-order
+    if (!!this) {
+      if (!!this.left) this.left.printDFS_rPost();
+      if (!!this.right) this.right.printDFS_rPost();
+      console.log(this.data);
     }
   }
 
 }
 
 
-
 let root = new Node(10);
-root.insert_(5);
-root.insert_(15);
-root.insert_(4);
-root.insert_(6);
-root.insert_(17);
-root.insert_(7);
-root.insert_(16);
+root.insert_i(5);
+root.insert_i(15);
+root.insert_r(4);
+root.insert_r(6);
+root.insert_i(17);
+root.insert_i(7);
+root.insert_r(16);
 
-// root.printBFS_();
-root.printDFS_();
+// root.printBFS_i();
+// // root.printBFS_r(); /* not advised */
+// root.printDFS_iPre();
+// root.printDFS_rPre();
+// root.printDFS_iIn();
+// root.printDFS_rIn();
+// root.printDFS_iPost();
+root.printDFS_rPost();
+
+
